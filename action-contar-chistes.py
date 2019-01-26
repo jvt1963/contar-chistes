@@ -25,6 +25,7 @@ def intent_received(hermes, intent_message):
         sentence = extraer_chiste()
         
     else:
+        sentence = "Lo siento, no te he entendido"
         return
     
     hermes.publish_end_session(intent_message.session_id, sentence)
