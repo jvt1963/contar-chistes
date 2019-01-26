@@ -1,3 +1,5 @@
 hermes_python==0.1.18
 
 requests
+
+html2text
