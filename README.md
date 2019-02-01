@@ -1,5 +1,5 @@
 # Cuenta un chiste
-[[MIT License](https://github.com/jvt1963/contar-chistes/blob/master/LICENSE)
+[MIT License](https://github.com/jvt1963/contar-chistes/blob/master/LICENSE)
 
 Esto es una acción de Snips programada en Python y es compatible con `snips-skill-server`.
 
