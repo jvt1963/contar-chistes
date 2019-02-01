@@ -1,4 +1,4 @@
-hermes_python==0.1.18
+hermes_python==0.1.29
 
 requests
 
