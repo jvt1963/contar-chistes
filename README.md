@@ -1,52 +1,56 @@
 # Cuenta un chiste
-[![MIT License](https://github.com/jvt1963/contar-chistes/edit/master/README.md/master/LICENSE)
+[![MIT License](https://github.com/jvt1963/contar-chistes/blob/master/LICENSE)
 
-This is a Snips action written in Python and is compatible with `snips-skill-server`.
+Esto es una acción de Snips programada en Python y es compatible con `snips-skill-server`.
 
-## Setup
-### Prerequisites
+## Instalación
+### Prerrequisitos
 
-You'll need to add the TurnOn-TurnOff-http english skill in your assistant. It's available on [Snips' console](https://console.snips.ai)
+Debes añadir la skill "cuenta un chiste" en tu asistente. Está disponible en [la consola de Snips](https://console.snips.ai)
 
-### SAM (preferred)
-To install the action on your device, you can use [Sam](https://snips.gitbook.io/getting-started/installation)
+### SAM
+Para instalar la acción en tu dispositivo, puedes usar [Sam](https://snips.gitbook.io/getting-started/installation)
 
-`sam install action -g https://github.com/jvt1963/snips-turnOnOff-http.git`
+`sam install action -g https://github.com/jvt1963/contar-chistes.git`
 
-### Manually
+### Manualmente
 
-Copy it manually to the device to the folder `/var/lib/snips/skills/`
-You'll need `snips-skill-server` installed on the pi
+Copia este repositorio manualmente en tu dispostivo, en la carpeta `/var/lib/snips/skills/`
+Se necesita `snips-skill-server` instalado en la pi
 
 `sudo apt-get install snips-skill-server`
 
-Stop snips-skill-server & generate the virtual environment
+Parar snips-skill-server & generar el entorno virtual
 ```
 sudo systemctl stop snips-skill-server
-cd /var/lib/snips/skills/snips-skill-weather-tts/
+cd /var/lib/snips/skills/contar-chistes/
 sh setup.sh
 sudo systemctl start snips-skill-server
 ```
 
-## How to trigger
+## Cómo usar la acción
 
 `Hey Snips`
 
-`Turn on kitchen lights`
+`Cuenta un chiste`
+`Di una gracia`
+`Cuenta algo gracioso`
+`Quiero reír`
+`Cuenta algo para reír`
 
 ## Logs
-Show snips-skill-server logs with sam:
+Muestra los logs de snips-skill-server con sam:
 
 `sam service log snips-skill-server`
 
-Or on the device:
+O en el dispositivo:
 
 `journalctl -f -u snips-skill-server`
 
-Check general platform logs:
+Comprueba los logs generales de la plataforma:
 
 `sam watch`
 
-Or on the device:
+O en el dispositivo:
 
 `snips-watch`
