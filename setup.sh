@@ -5,13 +5,13 @@ VENV=venv
 if [ ! -d "$VENV" ]
 then
 
-    PYTHON=`which python2`
+    PYTHON=`which python3`
 
     if [ ! -f $PYTHON ]
     then
-        echo "could not find python"
+        echo "could not find Python 3"
     fi
-    virtualenv -p $PYTHON $VENV
+    $PYTHON -m venv $VENV
 
 fi
 
