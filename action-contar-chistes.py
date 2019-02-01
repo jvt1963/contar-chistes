@@ -1,7 +1,8 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 from hermes_python.hermes import Hermes 
 import requests
 import html2text
+from html.parser import HTMLParser
 
 MQTT_IP_ADDR = "localhost" 
 MQTT_PORT = 1883 
@@ -11,19 +12,21 @@ MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 def extraer_chiste():
     url = "http://www.chistes.com/M//ChisteAlAzar.aspx?n=3"
     response = requests.get(url)
-    webContent = response.read()
-    webContent2 = webContent.decode().replace('<div class="chiste">','@',1)
-    webContent3 = webContent2.split('@')
-    webContent4 = webContent3[1].replace('</div>','@',1)
-    chiste = webContent4.split('@')
+    webContent = response.text
+    h = HTMLParser()
+    webContent = h.unescape(webContent)
+    webContent = webContent.replace('<div class="chiste">','@',1)
+    webContent = webContent.split('@')
+    webContent = webContent[1].replace('</div>','@',1)
+    chiste = webContent.split('@')
     texto = html2text.html2text(chiste[0])
-return texto
+    return texto
 
 def intent_received(hermes, intent_message):
     
-    if intent_message.intent.intent_name == 'jaimevegas:PedirChiste':
+    if intent_message.intent.intent_name == 'PedirChiste':
         sentence = extraer_chiste()
-        
+                        
     else:
         return
     
