@@ -24,7 +24,7 @@ def extraer_chiste():
 
 def intent_received(hermes, intent_message):
     
-    if intent_message.intent.intent_name == 'PedirChiste':
+    if intent_message.intent.intent_name == 'jaimevegas:PedirChiste':
         sentence = extraer_chiste()
                         
     else:
